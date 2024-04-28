@@ -5,14 +5,16 @@
   "author": "Menno",
   "repository": "github:/Mennauu/NextJS-Starter-Setup",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run open && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "open": "sleep 3 && open http://localhost:3000 &"
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.14.2",
     "next": "14.2.3",
+    "next-auth": "^5.0.0-beta.17",
     "react": "^18",
     "react-dom": "^18"
   },

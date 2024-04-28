@@ -1,4 +1,5 @@
 import { open_sans } from '@/app/fonts'
+import { SessionProvider } from 'next-auth/react'
 import type { Metadata } from 'next'
 import '@/styles/global.css'
 
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-US" className={open_sans.variable}>
-      <body>{children}</body>
-    </html>
+    <SessionProvider>
+      <html lang="en-US" className={open_sans.variable}>
+        <body>{children}</body>
+      </html>
+    </SessionProvider>
   )
 }

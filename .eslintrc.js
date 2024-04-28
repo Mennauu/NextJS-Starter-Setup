@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['next/core-web-vitals', 'plugin:storybook/recommended'],
+  extends: ['next/core-web-vitals'],
   plugins: ['@typescript-eslint', 'i18next'],
   rules: {
     /** Mute unused vars by adding a _ prefix to the variable */

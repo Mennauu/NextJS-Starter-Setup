@@ -1,5 +1,5 @@
-import { signIn } from '@/auth'
-import { auth } from '@/auth'
+import { signIn } from '@/src/auth'
+import { auth } from '@/src/auth'
 
 export default async function Home() {
   const session = await auth()
@@ -8,9 +8,6 @@ export default async function Home() {
     'use server'
     await signIn('github')
   }
-
-  console.log('dikke henk')
-  console.log(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
 
   return (
     <main>

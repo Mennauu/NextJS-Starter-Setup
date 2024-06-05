@@ -1,25 +1,16 @@
-import { signIn } from '@/src/auth'
-import { auth } from '@/src/auth'
+import dynamic from 'next/dynamic'
+import { container } from '../styles/styles.css'
+
+const CountryForm = dynamic(() => import('@/components/CountryForm'), { ssr: false })
 
 export default async function Home() {
-  const session = await auth()
-
-  const signInForm = async () => {
-    'use server'
-    await signIn('github')
-  }
-
   return (
     <main>
-      <h1>Home</h1>
+      <div className={container}>
+        <h1>Create your travel plans. Select a country</h1>
 
-      {session?.user?.name ? (
-        <p>Welcome {session.user.name}!</p>
-      ) : (
-        <form action={signInForm}>
-          <button type="submit">Signin with GitHub</button>
-        </form>
-      )}
+        <CountryForm />
+      </div>
     </main>
   )
 }

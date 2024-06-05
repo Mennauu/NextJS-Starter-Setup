@@ -102,7 +102,7 @@ globalStyle(`button, input, optgroup, select, textarea`, {
   margin: '0',
 })
 
-globalStyle('button', { overflow: 'visible' })
+globalStyle('button', { overflow: 'visible', cursor: 'pointer' })
 globalStyle(`button, select`, { textTransform: 'none' })
 
 globalStyle(
